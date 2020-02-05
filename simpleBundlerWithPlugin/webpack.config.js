@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './index.js',
@@ -19,5 +20,10 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+      new CopyPlugin([
+        { from: 'vue-bg.jpg', to: 'assets/img' },
+      ]),
+    ],
 };
