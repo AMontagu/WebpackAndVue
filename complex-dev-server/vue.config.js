@@ -1,12 +1,11 @@
 
 const path = require('path');
 const request = require('request');
-const webpack = require('webpack');
-const fs = require("fs");
 
 module.exports = {
   devServer: {
     port: 6080,
+    host: '0.0.0.0',
     proxy: {
       "/api/": {
         target: 'http://localhost:3000',
